@@ -1,0 +1,60 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sycorwftaskui.controller.wf" displayBlock="true">
+	<App>
+		<pages>
+			<Page showHeader="false" showFooter="true">
+				<content>
+					<GroupHeaderListItem id="__item3"/><ObjectHeader title="Daily Alert Overview" number="{view>/taskid}" intro="SAP Cloud Platform IoT Alert" introActive="true" titleActive="true" id="__header0" backgroundDesign="Translucent" numberState="Success"/>
+					<Table id="table" width="auto" class="sapUiResponsiveMargin" items="{/Alert}" noDataText="No Data" growing="true" growingScrollToLoad="true">
+			<headerToolbar>
+				<Toolbar>
+					<Title id="tableHeader" text="Alerts"/>
+				</Toolbar>
+			</headerToolbar>
+			<columns>
+				<Column id="idColumn"><header>
+					<Text text="Alarm ID:" id="IDColumnTitle"/></header>
+				</Column>
+				<Column id="levelColumn">
+				  <header>
+			    	<Text text="Alert Level:" id="levelColumnTitle"/>
+			      </header>
+				</Column>
+				<Column id="timeColumn">
+				  <header>
+			    	<Text text="Time(UTC):" id="timeColumnTitle"/>
+			      </header>
+				</Column>
+				<Column id="descrColumn" hAlign="Right">
+				  <header>
+			    	<Text text="Reason:" id="descrColumnTitle"/>
+			      </header>
+				</Column>
+				<Column id="ackColumn" hAlign="Right">
+				  <header>
+			    	<Text text="ACK:" id="ackColumnTitle"/>
+			      </header>
+				</Column>
+				<Column id="resolvedColumn" hAlign="Right">
+				  <header>
+			    	<Text text="Resolved:" id="resolvedColumnTitle"/>
+			      </header>
+				</Column>
+			</columns>
+		    <items>
+				<ColumnListItem>
+					<cells>
+						<ObjectIdentifier text="{id}"/>
+						<ObjectIdentifier text="{level}"/>
+						<ObjectIdentifier text="{time}"/>
+                          	<ObjectIdentifier text="{descr}"/>
+                          	<ObjectIdentifier text="{resolved}"/>
+                          	<ObjectIdentifier text="{acked}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
